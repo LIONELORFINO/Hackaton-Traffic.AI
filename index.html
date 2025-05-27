@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Traffic.AI</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flex-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/templatemo-breezed.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl-carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            TRAFFIC.AI
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#contact-us">Try</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+          <!-- Item -->
+          <div class="item">
+            <div class="img-fill">
+                <img src="{{ url_for('static', filename='images/Background.png') }}" alt="">
+                <div class="text-content">
+                  <h3>Welcome To TRAFFIC.AI</h3>
+                  <h5>Traffic Checker</h5>
+                  <a href="#contact-us" class="main-filled-button">Try It Now</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+        </div>
+    </div>
+    <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Tentang TRAFFIC.AI</h6>
+                            <h2>Memeriksa Kondisi Lalu Lintas Secara Akurat</h2>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4>Top Notch</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4>Robust</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/contact-info-03.png" alt="">
+                                    <h4>Reliable</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/contact-info-03.png" alt="">
+                                    <h4>Up-to-date</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="#" class="main-button-icon">
+                                    Learn More <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p>TRAFFIC.AI menyediakan fitur untuk memeriksa kondisi lalu lintas. 
+                        <br><br>Anda bisa mengunggah gambar, lalu melihat kategori gambar tersebut.
+                      <br><br>Website ini ditenagai oleh Flask dan model machine learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area Ends ***** -->
+    
+    <!-- ***** Testimonials Starts ***** -->
+    {% if name and image_url and detected_result and confidence %} 
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h6><strong>Nama Pengguna:</strong> {{ name }}</h6>
+                        <h2>Hasil Deteksi Gambar Lalu Lintas</h2>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12">
+                    <div class="">
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{{ image_url }}" alt="">
+                            </div>
+                            <h3 class="text-hasil">Hasil Deteksi:</h3>
+                            <h4>Kelas:</strong> {{ detected_result }}</h4>
+                            <span>Kepercayaan Diri:</strong> {{ confidence }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <fieldset>
+                    <a href="/" type="button" class="main-button-icon">Coba lagi <i class="fa fa-arrow-right"></i></a>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <!-- ***** Testimonials Ends ***** -->
+
+
+    <!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Cek Lalu Lintas</h6>
+                            <h2>Cek gambar kamu di sini</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="/process" method="post" enctype="multipart/form-data">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Your Name *" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="traffic_image" type="file" id="traffic_image" accept="image/*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Lihat hasil <i class="fa fa-arrow-right"></i></button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="left-text-content">
+                        <p>Copyright &copy; 2025 Traffic.AI. 
+                        
+                        - Design: <a rel="nofollow noopener" href="https://templatemo.com">TemplateMo</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <div class="right-text-content">
+                            <ul class="social-icons">
+                                <li><p>Follow Us</p></li>
+                                <li><a rel="nofollow" href="https://www.instagram.com/traffic.ai/ "><i class="fa fa-instagram"></i>
+                                <li><a rel="nofollow" href="https://linktr.ee/Lionel_Yustanlie"><i class="fa fa-link"></i></a></li>
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins -->
+    <script src="{{ url_for('static', filename='js/owl-carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/imgfix.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slick.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lightbox.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/isotope.js') }}"></script>
+    
+    <!-- Global Init -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>

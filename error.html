@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terjadi Kesalahan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-danger">Ups, terjadi kesalahan!</h1>
+    <p>{{ message }}</p>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-4">Kembali ke Halaman Utama</a>
+  </div>
+</body>
+</html>
